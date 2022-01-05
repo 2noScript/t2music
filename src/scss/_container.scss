@@ -1,0 +1,14 @@
+.container {
+  flex: 1;
+
+  padding-left: 32px;
+  padding-right: 32px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100vh;
+}
+.content {
+  width: 100%;
+  background-color: red;
+  height: 2000px;
+}

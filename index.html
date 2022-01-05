@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdn.rawgit.com/T02DEV/font-awesome/main/fontawesome-pro-5.13.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./wwwroot/css/main.min.css">
+    <script src="./wwwroot/js/stickyfill.js" async></script>
+    <script src="./wwwroot/js/app.min.js" async></script>
+    <script src="./wwwroot/js/lib_html.js" async></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="t2music_app">
+        <div class="navmenu">
+
+            <div class="navmenu__logo" style="height: 100px;">
+
+            </div>
+            <ul>
+                <li><a href="#" class="navmenu__tab "><i class="navmenu__tab-icon fal fa-compact-disc"></i><span
+                            class="navmenu__tab-text" class="navmenu__tab-text">khám
+                            phá</span></a></li>
+                <li><a href="#" class="navmenu__tab navmenu__tab--active"><i
+                            class="navmenu__tab-icon fab fa-napster"></i><span class="navmenu__tab-text">cá
+                            nhân</span></a></li>
+                <li><a href="#" class="navmenu__tab"><i class="navmenu__tab-icon fal fa-radio-alt"></i><span
+                            class="navmenu__tab-text">radio</span></a></li>
+                <li><a href="#" class="navmenu__tab"><i class="navmenu__tab-icon far fa-clipboard-list"></i><span
+                            class="navmenu__tab-text">theo
+                            dõi</span></a></li>
+                <li><a href="#" class="navmenu__tab"><i class="navmenu__tab-icon fal fa-icons"></i><span
+                            class="navmenu__tab-text">thể
+                            loại</span></a></li>
+                <li><a href="#" class="navmenu__tab"><i class="navmenu__tab-icon fal fa-chart-bar"></i><span
+                            class="navmenu__tab-text">trending
+                            music</span></a>
+                </li>
+                <li><a href="#" class="navmenu__tab"><i class="navmenu__tab-icon fal fa-music"></i><span
+                            class="navmenu__tab-text">nhạc
+                            mới</span></a></li>
+                <li><a href="#" class="navmenu__tab"><i class="navmenu__tab-icon fab fa-youtube"></i><span
+                            class="navmenu__tab-text">MV</span></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="header">
+                <div class="header__search">
+                    <div class="header__navigate">
+                        <div class="header__navigate-back"><i class="fal fa-long-arrow-left"></i></div>
+                        <div class="header__navigate-next"><i class="fal fa-long-arrow-right"></i></div>
+                    </div>
+                    <div class="header__search-btn"><i class="fal fa-search"></i></div>
+                    <input type="text" name="" id="" placeholder="Tìm Kiếm" class="header__search-text">
+                    <div class="header__search-clear"><i class="fal fa-times"></i></div>
+                </div>
+                <div class="header__myseft">
+                    <div src-html="./wwwroot/pages/theme.html" class="header__myseft-item"></div>
+                    <div class="header__myseft-item"><i class="fal fa-cog"></i></div>
+                    <div class="header__myseft-item"><img src="./wwwroot/images/girl.jpg" alt=""
+                            class="header__myseft-account-img"></div>
+                </div>
+            </div>
+            <div class="content">
+                <div>xin chào</div>
+            </div>
+            <div class="controlmusic">
+                <div class="controlmusic__currentsong">
+                    <img src="./wwwroot/images/girl.jpg" alt="" class="controlmusic__currentsong-img">
+                    <div class="controlmusic__currentsong-description">
+                        <div class="controlmusic__currentsong-songname"> best girl</div>
+                        <a href="#" class="controlmusic__currentsong-author">internet source</a>
+                    </div>
+                </div>
+                <div class="controlmusic__progress">
+                    <input type="range" min="0" max="100" value="10">
+                </div>
+                <div class="controlmusic__btnbox">
+                    <div class="controlmusic__btnbox-item hover"><i class="fal fa-random"></i></div>
+                    <div class="controlmusic__btnbox-item hover"><i class="fal fa-step-backward"></i></div>
+                    <div
+                        class="controlmusic__btnbox-item controlmusic__btnbox-item-play controlmusic__btnbox-item-play--active">
+                        <i class="fal fa-play-circle"></i>
+                    </div>
+                    <div class="controlmusic__btnbox-item controlmusic__btnbox-item-play"><i
+                            class="fal fa-pause-circle"></i></div>
+                    <div class="controlmusic__btnbox-item hover"><i class="fal fa-step-forward"></i></div>
+                    <div class="controlmusic__btnbox-item hover"><i class="fal fa-repeat"></i></div>
+                </div>
+                <div class="controlmusic__custom">
+                    <div class="controlmusic__custom-item"><i class="fal fa-expand-arrows"></i></div>
+                    <div class="controlmusic__custom-item"><i class="fal fa-list-music"></i></div>
+                    <div class="controlmusic__custom-item"><i class="fad fa-microphone"></i></div>
+                    <div class="controlmusic__custom-volume"> <input type="range" min="0" max="100" value="10"></div>
+                    <div class="controlmusic__custom-item"> <i class="fal fa-volume"></i>
+                        <i class="fal fa-volume-mute" style="display: none;"></i>
+                    </div>
+                    <div class="controlmusic__custom-timesong">
+                        <span>00:00/00:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+@import "navmenu";
+@import "container";
+@import "header";
+@import "controlmusic";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+  // font-family: "Lato", sans-serif;
+  font-weight: 500;
+}
+ul {
+  position: relative;
+  height: auto;
+  list-style: none;
+  width: 100%;
+}
+body {
+  background-color: transparent;
+  overflow: hidden overlay;
+  overflow-y: hidden;
+  will-change: scroll-position;
+  scroll-behavior: smooth;
+  overflow-anchor: none !important;
+  scroll-snap-stop: normal !important;
+  overscroll-behavior: unset !important;
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.t2music_app {
+  display: flex;
+}

@@ -1,0 +1,122 @@
+.header {
+  position: sticky;
+  top: 0;
+  background-color: rgb(38, 31, 46);
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header__navigate {
+  display: flex;
+  align-items: center;
+  //   border: red solid 1px;
+  justify-content: center;
+}
+.header__navigate-back,
+.header__navigate-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+
+  //   margin-left: 16px;
+}
+.header__navigate-next {
+  margin-left: 16px;
+  margin-right: 8px;
+}
+.header__search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 38px;
+  background-color: rgb(52, 47, 60);
+  border-radius: 0 25px 25px 0;
+  width: 700px;
+  padding-left: 24px;
+  color: wheat;
+  // visibility: hidden;
+}
+.header__search-btn {
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  font-size: 18px;
+  //   background-color: red;
+}
+.header__search-text {
+  flex: 1;
+  padding: 0;
+  margin-left: 8px;
+  outline: none;
+  font-size: 13px;
+  background-color: transparent;
+  margin-right: 32px;
+
+  color: inherit;
+  // background-color: red;
+  //   text-transform: capitalize;
+}
+.header__search-text:focus ~ .header__search-clear {
+  visibility: visible;
+}
+.header__search-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-right: 8px;
+  height: 22px;
+  width: 22px;
+  position: absolute;
+  right: 0;
+  visibility: hidden;
+  transition: visibility 0.2s ease;
+  // visibility: visible;
+}
+.header__search-clear:hover {
+  background-color: red;
+}
+
+.header__myseft {
+  position: absolute;
+  padding-right: 24px;
+  display: flex;
+  //   flex-direction: row-reverse;
+  align-items: center;
+  height: 38px;
+  right: 0;
+  //   background-color: aqua;
+  //   border-radius: 25px 0 0 25px;
+  //   min-width: 200px;
+  //   opacity: 0.5;
+}
+.header__myseft-item {
+  //   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
+  background-color: wheat;
+  font-size: 16px;
+  margin-left: 16px;
+  cursor: pointer;
+}
+.header__myseft-account-img {
+  height: inherit;
+  width: inherit;
+  border-radius: 50%;
+  object-fit: scale-down;
+}
