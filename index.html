@@ -17,16 +17,15 @@
 <body>
     <div class="t2music_app">
         <div class="navmenu">
-
             <div class="navmenu__logo" style="height: 100px;">
 
             </div>
             <ul>
-                <li><a href="#" class="navmenu__tab "><i class="navmenu__tab-icon fal fa-compact-disc"></i><span
+                <li><a href="#" class="navmenu__tab"><i class="navmenu__tab-icon fal fa-compact-disc"></i><span
                             class="navmenu__tab-text" class="navmenu__tab-text">khám
                             phá</span></a></li>
-                <li><a href="#" class="navmenu__tab navmenu__tab--active"><i
-                            class="navmenu__tab-icon fab fa-napster"></i><span class="navmenu__tab-text">cá
+                <li><a href="#" class="navmenu__tab"><i class="navmenu__tab-icon fab fa-napster"></i><span
+                            class="navmenu__tab-text">cá
                             nhân</span></a></li>
                 <li><a href="#" class="navmenu__tab"><i class="navmenu__tab-icon fal fa-radio-alt"></i><span
                             class="navmenu__tab-text">radio</span></a></li>
@@ -46,7 +45,9 @@
                 <li><a href="#" class="navmenu__tab"><i class="navmenu__tab-icon fab fa-youtube"></i><span
                             class="navmenu__tab-text">MV</span></a>
                 </li>
+                <div class="navmenu__tab-select"></div>
             </ul>
+
         </div>
 
         <div class="container">
@@ -61,8 +62,8 @@
                     <div class="header__search-clear"><i class="fal fa-times"></i></div>
                 </div>
                 <div class="header__myseft">
-                    <div src-html="./wwwroot/pages/theme.html" class="header__myseft-item"></div>
-                    <div class="header__myseft-item"><i class="fal fa-cog"></i></div>
+                    <div src-html="./wwwroot/pages/theme.html" class="header__myseft-item reFix"></div>
+                    <div class="header__myseft-item reFix"><i class="fal fa-cog"></i></div>
                     <div class="header__myseft-item"><img src="./wwwroot/images/girl.jpg" alt=""
                             class="header__myseft-account-img"></div>
                 </div>
@@ -101,10 +102,14 @@
                     <div class="controlmusic__custom-item"> <i class="fal fa-volume"></i>
                         <i class="fal fa-volume-mute" style="display: none;"></i>
                     </div>
-                    <div class="controlmusic__custom-timesong">
-                        <span>00:00/00:00</span>
-                    </div>
                 </div>
+                <div class="controlmusic__custom-toggle">
+                    <i class="far fa-ellipsis-v"></i>
+                </div>
+                <div class="controlmusic__current-timesong">
+                    <span>00:00/00:00</span>
+                </div>
+
             </div>
         </div>
     </div>

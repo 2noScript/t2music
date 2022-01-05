@@ -1,0 +1,100 @@
+// pc low
+
+@media (min-width: 740px) and (max-width: 1023px) {
+  // css navmenu
+  .navmenu {
+    width: 56px;
+  }
+  .navmenu__tab-text {
+    display: none;
+  }
+  .navmenu__tab,
+  .navmenu__tab-icon {
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+  }
+  .navmenu__tab,
+  .navmenu__tab-select {
+    height: 42px;
+  }
+
+  // end css navmenu
+
+  //css header
+  .header__myseft-item.reFix {
+    display: none;
+  }
+  .header__search {
+    width: 560px;
+  }
+  .header__navigate {
+    display: none;
+  }
+  //end css header
+  //css control music
+  .controlmusic__progress input[type="range"] {
+    width: 360px;
+  }
+  // end css control music
+}
+
+//fix
+@media (min-width: 1023px) and (max-width: 1280px) {
+  .controlmusic__custom {
+    visibility: hidden;
+  }
+  .controlmusic__custom.controlmusic__custom--show {
+    display: flex;
+    background-color: rgba(39, 71, 176, 0.57);
+    height: 60px;
+    width: 300px;
+    justify-content: center;
+    top: -75%;
+    right: 0;
+    visibility: visible;
+    animation: controlmusicCustomVisible 0.8s ease;
+  }
+  @keyframes controlmusicCustomVisible {
+    from {
+      top: 100%;
+    }
+    to {
+      top: -75%;
+    }
+  }
+  .controlmusic__custom-toggle {
+    z-index: 99;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 8px;
+    height: 32px;
+    width: 32px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  .controlmusic__custom-toggle:hover {
+    background-color: blueviolet;
+  }
+  .controlmusic__current-timesong {
+    z-index: 99;
+    right: 56px;
+  }
+
+  //fix header
+  .header__search {
+    width: 660px;
+  }
+  .header__myseft-item.reFix {
+    display: none;
+  }
+  //end fix header
+}
+// tablet or smartphone
+@media (max-width: 739px) {
+}

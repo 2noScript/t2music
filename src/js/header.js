@@ -9,8 +9,6 @@ const header = {
     search_clear.addEventListener("click", function () {
       search_text.value = null;
     });
-
-    console.log(search_clear);
   },
   start: function () {
     this.eventHandle();
