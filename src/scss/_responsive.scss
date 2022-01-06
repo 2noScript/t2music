@@ -1,13 +1,15 @@
 // pc low
 
 @media (min-width: 740px) and (max-width: 1023px) {
-  // css navmenu
-  .navmenu {
-    width: 56px;
+  :root {
+    --navmenu-w: 56px !important;
   }
+  // css navmenu
+
   .navmenu__tab-text {
     display: none;
   }
+
   .navmenu__tab,
   .navmenu__tab-icon {
     padding: 0;
@@ -20,37 +22,34 @@
   }
 
   // end css navmenu
-
   //css header
   .header__myseft-item.reFix {
     display: none;
   }
   .header__search {
-    width: 560px;
+    width: 85%;
   }
   .header__navigate {
     display: none;
   }
   //end css header
   //css control music
-  .controlmusic__progress input[type="range"] {
-    width: 360px;
-  }
+
   // end css control music
 }
 
 //fix
-@media (min-width: 1023px) and (max-width: 1280px) {
+@media (max-width: 1280px) {
   .controlmusic__custom {
     visibility: hidden;
   }
   .controlmusic__custom.controlmusic__custom--show {
     display: flex;
     background-color: rgba(39, 71, 176, 0.57);
-    height: 60px;
+    height: 50px;
     width: 300px;
     justify-content: center;
-    top: -75%;
+    top: -63%;
     right: 0;
     visibility: visible;
     animation: controlmusicCustomVisible 0.8s ease;
@@ -60,7 +59,7 @@
       top: 100%;
     }
     to {
-      top: -75%;
+      top: -63%;
     }
   }
   .controlmusic__custom-toggle {
@@ -85,16 +84,148 @@
     z-index: 99;
     right: 56px;
   }
+}
 
-  //fix header
-  .header__search {
-    width: 660px;
+// tablet or smartphone
+@media (max-width: 739px) {
+  :root {
+    --navmenu-w: 100% !important;
+    --navmenu-h: 40px !important;
+
+    --controlMusic-h: 50px !important;
+  }
+
+  .container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  //header
+  .header {
+    width: 100%;
+    right: 0;
   }
   .header__myseft-item.reFix {
     display: none;
   }
-  //end fix header
-}
-// tablet or smartphone
-@media (max-width: 739px) {
+  .header__search {
+    margin-left: 16px;
+    padding: 0;
+    border-radius: 8px;
+  }
+  .header__navigate {
+    display: none;
+  }
+
+  //end header
+  //navmenu
+
+  .navmenu {
+    position: fixed;
+    flex-direction: row;
+    top: calc(100vh - var(--navmenu-h));
+    bottom: 0;
+  }
+  .navmenu ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navmenu li {
+    height: 100%;
+    display: block;
+    flex: 0 0 12%;
+  }
+  .navmenu__tab {
+    font-size: 14px;
+    padding: 0;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+  }
+  .navmenu__logo {
+    display: none;
+  }
+  .navmenu__tab-icon {
+    margin: 0;
+  }
+  .navmenu__tab-text {
+    display: none;
+  }
+  .navmenu__tab-select {
+    display: none;
+  }
+
+  // end navmenu
+
+  //controlmusic
+  .controlmusic {
+    right: 0;
+    width: 100%;
+    padding-left: 4px;
+    padding-right: 4px;
+    top: calc(100vh - var(--controlMusic-h) - var(--navmenu-h));
+  }
+  .controlmusic__currentsong-img {
+    max-height: 40px;
+    max-width: 40px;
+  }
+  .controlmusic__currentsong .controlmusic__currentsong-songname {
+    font-size: 14px;
+  }
+  .controlmusic__currentsong .controlmusic__currentsong-author {
+    font-size: 12px;
+  }
+  .controlmusic__btnbox {
+    right: 24px;
+    width: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%;
+    justify-content: space-around;
+  }
+  .controlmusic__btnbox-item {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    height: auto;
+    width: auto;
+
+    // background-color: turquoise;
+    // background-color: transparent;
+  }
+
+  .controlmusic__btnbox-item.hover:hover {
+    background-color: transparent;
+  }
+  .controlmusic__btnbox-item-play {
+    font-size: 24px;
+  }
+  .controlmusic__progress input[type="range"] {
+    width: 98%;
+  }
+  .controlmusic__current-timesong {
+    display: none;
+  }
+  .controlmusic__custom.controlmusic__custom--show {
+    height: 32px;
+  }
+  .controlmusic__custom {
+    width: auto;
+  }
+  .controlmusic__custom-item {
+    font-size: 14px;
+  }
+  .controlmusic__custom-item:hover {
+    background-color: transparent;
+  }
+  @keyframes controlmusicCustomVisible {
+    from {
+      top: 100%;
+    }
+    to {
+      top: -63%;
+    }
+  }
+  //end controlmusic
 }

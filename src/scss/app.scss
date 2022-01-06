@@ -3,7 +3,8 @@
 @import "header";
 @import "controlmusic";
 @import "responsive";
-
+@import "./pagescss/personal/personal";
+@import "base";
 * {
   margin: 0;
   padding: 0;
@@ -34,7 +35,8 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: black;
+  z-index: 999;
+  background-color: blue;
   border-radius: 4px;
 }
 
@@ -43,5 +45,6 @@ body {
 }
 
 .t2music_app {
+  // background-color: var(--app-bg);
   display: flex;
 }

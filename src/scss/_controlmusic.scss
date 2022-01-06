@@ -1,10 +1,10 @@
 .controlmusic {
-  position: sticky;
+  position: fixed;
   background-color: blue;
-  height: 80px;
-  width: 100%;
-  bottom: 0;
-  left: 0;
+  height: var(--controlMusic-h);
+  width: calc(100vw - var(--navmenu-w) - 64px);
+  top: calc(100vh - var(--controlMusic-h));
+  right: 32px;
   padding-left: 16px;
   padding-right: 16px;
 }
@@ -76,9 +76,11 @@ input[type="range"] {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .controlmusic__progress input[type="range"] {
-  width: 700px;
+  // width: 700px;
+  width: 60%;
   // min-width: 300px;
 }
 .controlmusic__progress:hover input[type="range"]::-webkit-slider-thumb {
@@ -113,9 +115,11 @@ input[type="range"] {
   border-radius: 50%;
   cursor: pointer;
 }
+
 .controlmusic__btnbox-item.hover:hover {
   background-color: red;
 }
+
 .controlmusic__btnbox-item-play {
   background-color: transparent;
   display: none;

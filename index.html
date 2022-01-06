@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"
         href="https://cdn.rawgit.com/T02DEV/font-awesome/main/fontawesome-pro-5.13.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./wwwroot/css/grid.css">
     <link rel="stylesheet" href="./wwwroot/css/main.min.css">
     <script src="./wwwroot/js/stickyfill.js" async></script>
     <script src="./wwwroot/js/app.min.js" async></script>
@@ -49,69 +50,68 @@
             </ul>
 
         </div>
-
+        <div class="header">
+            <div class="header__search">
+                <div class="header__navigate">
+                    <div class="header__navigate-back"><i class="fal fa-long-arrow-left"></i></div>
+                    <div class="header__navigate-next"><i class="fal fa-long-arrow-right"></i></div>
+                </div>
+                <div class="header__search-btn"><i class="fal fa-search"></i></div>
+                <input type="text" name="" id="" placeholder="Tìm Kiếm" class="header__search-text">
+                <div class="header__search-clear"><i class="fal fa-times"></i></div>
+            </div>
+            <div class="header__myseft">
+                <div src-html="./wwwroot/pages/theme.html" class="header__myseft-item reFix"></div>
+                <div class="header__myseft-item reFix"><i class="fal fa-cog"></i></div>
+                <div class="header__myseft-item"><img src="./wwwroot/images/girl.jpg" alt=""
+                        class="header__myseft-account-img"></div>
+            </div>
+        </div>
+        <div class="controlmusic">
+            <div class="controlmusic__currentsong">
+                <img src="./wwwroot/images/girl.jpg" alt="" class="controlmusic__currentsong-img">
+                <div class="controlmusic__currentsong-description">
+                    <div class="controlmusic__currentsong-songname"> best girl</div>
+                    <a href="#" class="controlmusic__currentsong-author">internet source</a>
+                </div>
+            </div>
+            <div class="controlmusic__progress">
+                <input type="range" min="0" max="100" value="10">
+            </div>
+            <div class="controlmusic__btnbox">
+                <div class="controlmusic__btnbox-item hover"><i class="fal fa-random"></i></div>
+                <div class="controlmusic__btnbox-item hover"><i class="fal fa-step-backward"></i></div>
+                <div
+                    class="controlmusic__btnbox-item controlmusic__btnbox-item-play controlmusic__btnbox-item-play--active">
+                    <i class="fal fa-play-circle"></i>
+                </div>
+                <div class="controlmusic__btnbox-item controlmusic__btnbox-item-play"><i
+                        class="fal fa-pause-circle"></i></div>
+                <div class="controlmusic__btnbox-item hover"><i class="fal fa-step-forward"></i></div>
+                <div class="controlmusic__btnbox-item hover"><i class="fal fa-repeat"></i></div>
+            </div>
+            <div class="controlmusic__custom">
+                <div class="controlmusic__custom-item"><i class="fal fa-expand-arrows"></i></div>
+                <div class="controlmusic__custom-item"><i class="fal fa-list-music"></i></div>
+                <div class="controlmusic__custom-item"><i class="fad fa-microphone"></i></div>
+                <div class="controlmusic__custom-volume"> <input type="range" min="0" max="100" value="10"></div>
+                <div class="controlmusic__custom-item"> <i class="fal fa-volume"></i>
+                    <i class="fal fa-volume-mute" style="display: none;"></i>
+                </div>
+            </div>
+            <div class="controlmusic__custom-toggle">
+                <i class="far fa-ellipsis-v"></i>
+            </div>
+            <div class="controlmusic__current-timesong">
+                <span>00:00/00:00</span>
+            </div>
+        </div>
         <div class="container">
-            <div class="header">
-                <div class="header__search">
-                    <div class="header__navigate">
-                        <div class="header__navigate-back"><i class="fal fa-long-arrow-left"></i></div>
-                        <div class="header__navigate-next"><i class="fal fa-long-arrow-right"></i></div>
-                    </div>
-                    <div class="header__search-btn"><i class="fal fa-search"></i></div>
-                    <input type="text" name="" id="" placeholder="Tìm Kiếm" class="header__search-text">
-                    <div class="header__search-clear"><i class="fal fa-times"></i></div>
-                </div>
-                <div class="header__myseft">
-                    <div src-html="./wwwroot/pages/theme.html" class="header__myseft-item reFix"></div>
-                    <div class="header__myseft-item reFix"><i class="fal fa-cog"></i></div>
-                    <div class="header__myseft-item"><img src="./wwwroot/images/girl.jpg" alt=""
-                            class="header__myseft-account-img"></div>
-                </div>
-            </div>
-            <div class="content">
-                <div>xin chào</div>
-            </div>
-            <div class="controlmusic">
-                <div class="controlmusic__currentsong">
-                    <img src="./wwwroot/images/girl.jpg" alt="" class="controlmusic__currentsong-img">
-                    <div class="controlmusic__currentsong-description">
-                        <div class="controlmusic__currentsong-songname"> best girl</div>
-                        <a href="#" class="controlmusic__currentsong-author">internet source</a>
-                    </div>
-                </div>
-                <div class="controlmusic__progress">
-                    <input type="range" min="0" max="100" value="10">
-                </div>
-                <div class="controlmusic__btnbox">
-                    <div class="controlmusic__btnbox-item hover"><i class="fal fa-random"></i></div>
-                    <div class="controlmusic__btnbox-item hover"><i class="fal fa-step-backward"></i></div>
-                    <div
-                        class="controlmusic__btnbox-item controlmusic__btnbox-item-play controlmusic__btnbox-item-play--active">
-                        <i class="fal fa-play-circle"></i>
-                    </div>
-                    <div class="controlmusic__btnbox-item controlmusic__btnbox-item-play"><i
-                            class="fal fa-pause-circle"></i></div>
-                    <div class="controlmusic__btnbox-item hover"><i class="fal fa-step-forward"></i></div>
-                    <div class="controlmusic__btnbox-item hover"><i class="fal fa-repeat"></i></div>
-                </div>
-                <div class="controlmusic__custom">
-                    <div class="controlmusic__custom-item"><i class="fal fa-expand-arrows"></i></div>
-                    <div class="controlmusic__custom-item"><i class="fal fa-list-music"></i></div>
-                    <div class="controlmusic__custom-item"><i class="fad fa-microphone"></i></div>
-                    <div class="controlmusic__custom-volume"> <input type="range" min="0" max="100" value="10"></div>
-                    <div class="controlmusic__custom-item"> <i class="fal fa-volume"></i>
-                        <i class="fal fa-volume-mute" style="display: none;"></i>
-                    </div>
-                </div>
-                <div class="controlmusic__custom-toggle">
-                    <i class="far fa-ellipsis-v"></i>
-                </div>
-                <div class="controlmusic__current-timesong">
-                    <span>00:00/00:00</span>
-                </div>
+            <div class="content content--active">
 
             </div>
         </div>
+
     </div>
 </body>
 
