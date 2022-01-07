@@ -1,3 +1,8 @@
+/* c-column
+m-medium _ tablet
+l-large _ PC
+ */
+
 .grid {
   width: 100%;
   display: block;
@@ -15,7 +20,9 @@
   margin-left: -4px;
   margin-right: -4px;
 }
-
+.row.no-wrap{
+ flex-wrap: nowrap;
+}
 .row.no-gutters {
   margin-left: 0;
   margin-right: 0;

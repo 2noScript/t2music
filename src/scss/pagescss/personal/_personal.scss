@@ -1,10 +1,124 @@
 .page-personal-box {
-  margin-top: 100px;
-  background-color: blanchedalmond;
+  margin-top: var(--header-h);
+  // margin-top: 80px;
+  background-color: transparent;
   width: 100%;
 }
-.show {
-  margin-top: 10px;
-  height: 2000px;
-  background-color: blueviolet;
+.personal__user-box {
+  position: relative;
+  height: 240px;
+}
+.personal__user-profile {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.personal__user-profile-img {
+  margin-top: 24px;
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.personal__user-profile-name {
+  width: 100%;
+  margin-top: 16px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.personal__narbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+}
+.personal__narbar-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgb(53, 53, 53);
+  height: 36px;
+  width: 560px;
+  border-radius: 30px;
+}
+.personal__narbar-box-item {
+  cursor: pointer;
+  height: 24px;
+  flex: 0 0 20%;
+  background-color: rgb(114, 114, 114);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+}
+.personal__narbar-box-item-more {
+  flex: 0 0 9%;
+}
+
+// content
+.personal__content {
+  padding-top: 16px;
+  display: block;
+}
+.personal__content-item {
+}
+.personnal__content-title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: burlywood;
+  height: 30px;
+}
+.personnal__content-title-text {
+  font-size: 20px;
+  padding-left: 8px;
+  text-transform: capitalize;
+  font-weight: 800;
+}
+
+.personal__songs {
+  display: flex;
+  padding-top: 16px;
+  height: 300px;
+}
+.personal__songs-animate {
+  width: 300px;
+  background-color: chartreuse;
+}
+.personal__songs-list {
+  padding-left: 16px;
+  flex: 1;
+  overflow-y: scroll;
+}
+.personal__songs-list-item {
+  display: flex;
+  align-items: center;
+  // flex-wrap: nowrap;
+  height: 25%;
+}
+.personal__songs-img {
+  width: 40px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.personal__songs-description {
+  padding-left: 8px;
+}
+.personal__songs-description-name {
+  font-size: 14px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.personal__songs-description-author {
+  font-size: 12px;
+  text-decoration: none;
+}
+.personal__songs-description-author:hover {
+  text-decoration: underline;
 }
