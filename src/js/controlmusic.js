@@ -1,11 +1,3 @@
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
-
-const controlmusicCustomToggle = $(".controlmusic__custom-toggle");
-const controlmusicCustom = $(".controlmusic__custom");
-const inputRangeProgress = $(".controlmusic__progress input[type='range']");
-const inputRangeVolume = $(".controlmusic__custom-volume input[type='range']");
-
 const controlmusic = {
   getBackgroundSize: function (inputRange) {
     var min = +inputRange.min || 0;
@@ -20,18 +12,28 @@ const controlmusic = {
     );
   },
   eventHandle: function () {
-    controlmusicCustomToggle.addEventListener("click", function () {
-      controlmusicCustom.classList.toggle("controlmusic__custom--show");
+    $(".controlmusic__custom-toggle").click(function () {
+      $(".controlmusic__custom").toggleClass("controlmusic__custom--show");
     });
-    //progress song
-    this.setBackgroundSize(inputRangeProgress);
-    inputRangeProgress.addEventListener("input", () =>
-      this.setBackgroundSize(inputRangeProgress)
-    );
+    //sử lý input type='range'
+    // control music progress
+    this.setBackgroundSize($(".controlmusic__progress input[type='range']")[0]);
+    $(".controlmusic__progress input[type='range']").bind("input", function () {
+      controlmusic.setBackgroundSize(
+        $(".controlmusic__progress input[type='range']")[0]
+      );
+    });
     // volume
-    this.setBackgroundSize(inputRangeVolume);
-    inputRangeVolume.addEventListener("input", () =>
-      this.setBackgroundSize(inputRangeVolume)
+    this.setBackgroundSize(
+      $(".controlmusic__custom-volume input[type='range']")[0]
+    );
+    $(".controlmusic__custom-volume input[type='range']").bind(
+      "input",
+      function () {
+        controlmusic.setBackgroundSize(
+          $(".controlmusic__custom-volume input[type='range']")[0]
+        );
+      }
     );
   },
   start: function () {

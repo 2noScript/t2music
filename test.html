@@ -1,3 +1,47 @@
-<div style="height: 100px;width: 100%;background-color:darkblue;display: block;margin-top: 100px;height: 2000px;">
-    <div style="margin-top: 20px; width: 100px;">xin chào ổn ko</div>
-</div>
+<html>
+
+<head>
+    <title>My Now Amazing Webpage</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+<style>
+    ul {
+        margin-top: 100px;
+        margin-left: 100px;
+        background-color: burlywood;
+        width: 200px;
+        height: 100px;
+        display: flex;
+    }
+</style>
+
+<body>
+
+    <ul>
+        <li>xin chào</li>
+        <li>các bạn</li>
+        <li>mình là </li>
+        <li>t2dev</li>
+
+    </ul>
+    <script>
+        var d;
+        $.getJSON('./wwwroot/data/data.json', function (data) {
+            d = data;
+        })
+
+        console.log(d)
+        $("ul").slick({
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            draggable: false,
+            infinite: false,
+
+        })
+    </script>
+</body>
+
+</html>

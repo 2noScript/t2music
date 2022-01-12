@@ -12,11 +12,12 @@
   height: 100vh;
 }
 .content {
+  margin-top: 60px;
   width: 100%;
-  background-color: red;
-  height: 2000px;
+  // background-color: rgb(16, 31, 63);
+  padding-bottom: 200px;
 }
 
 .content.content--active {
-  display: flex;
+  display: block;
 }

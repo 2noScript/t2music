@@ -7,13 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"
         href="https://cdn.rawgit.com/T02DEV/font-awesome/main/fontawesome-pro-5.13.0-web/css/all.min.css">
-    <link rel="stylesheet" href="./wwwroot/css/main.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <link rel="stylesheet" href="./wwwroot/css/font.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/T02DEV/Library/main/css/gridSystem/grid.css">
 
-    <script src="./wwwroot/js/stickyfill.js" async></script>
-    <script src="./wwwroot/js/app.min.js" async></script>
-    <script src="./wwwroot/js/lib_html.js" async></script>
-    <!-- <link rel="stylesheet" href="./wwwroot/css/grid.css"> -->
+    <link rel="stylesheet" href="./wwwroot/css/main.min.css">
+    <!-- lib slick slider show -->
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+
+    <script src="./wwwroot/js/app.min.js" defer></script>
     <title>Document</title>
 </head>
 
@@ -21,7 +27,6 @@
     <div class="t2music_app">
         <div class="navmenu">
             <div class="navmenu__logo" style="height: 100px;">
-
             </div>
             <ul>
                 <li><a href="#" class="navmenu__tab"><i class="navmenu__tab-icon fal fa-compact-disc"></i><span
@@ -63,7 +68,7 @@
                 <div class="header__search-clear"><i class="fal fa-times"></i></div>
             </div>
             <div class="header__myseft">
-                <div src-html="./wwwroot/pages/theme.html" class="header__myseft-item reFix"></div>
+                <div class="header__myseft-item reFix"><i class="fal fa-leaf"></i></div>
                 <div class="header__myseft-item reFix"><i class="fal fa-cog"></i></div>
                 <div class="header__myseft-item"><img src="./wwwroot/images/girl.jpg" alt=""
                         class="header__myseft-account-img"></div>
@@ -109,12 +114,206 @@
             </div>
         </div>
         <div class="container">
-            <div class="content content--active" src-html='./wwwroot/pages/views/personal.html'>
+            <div class="content content--active personal-page">
+                <div class="personal__head">
+                    <div class="personal__head-user">
+                        <img src="https://raw.githubusercontent.com/T02DEV/T2music-data/main/artists/jx/img/1.jpg"
+                            alt="" class="personal__head-user-img">
+                        <div class="personal__head-user-name">t2dev</div>
+                    </div>
+                    <div class="personal__head-narbar">
+                        <div class="personal__head-narbar-menu">
+                            <span class="btn-text">tổng quan</span>
+                            <span class="btn-text">bài hát</span>
+                            <span class="btn-text">playlist</span>
+                            <span class="btn-text">nghệ sĩ</span>
+                            <div class="btn-more"><i class="far fa-ellipsis-h"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="personal__body">
+                    <div class="personal__overview">
 
-            </div>
-        </div>
+                        <!-- overview-songs -->
+                        <div class="personal__overview-it">
+                            <div class="personal__overview-it-title">
+                                <span class="title-txt">
+                                    bài hát
+                                </span>
+                            </div>
+                            <div class="personal__overview-it-cot overview-songs">
+                                <div class="overview-songs__animate">
 
-    </div>
+                                </div>
+                                <div class="overview-songs__list ">
+                                    <div class="the-song row no-gutters">
+                                        <img src="./wwwroot/images/girl.jpg" alt="" class="the-song-img">
+                                        <div class="the-song-des">
+                                            <div class="the-song-des-name">best girl</div>
+                                            <a href="#" class="the-song-des-author"> internet source</a>
+                                        </div>
+                                        <div class="the-song-time col l-o-4 l-1 m-0 c-0">00:00</div>
+                                        <div class="the-song-option">
+                                            <div>
+                                                <i class="fal fa-microphone"></i>
+                                            </div>
+                                            <div><i class="fal fa-heart"></i></div>
+                                            <div><i class="far fa-ellipsis-h"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="the-song">1</div>
+                                    <div class="the-song">1</div>
+                                    <div class="the-song">1</div>
+                                    <div class="the-song">1</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- overview-playlist -->
+                        <div class="personal__overview-it overview__playlist">
+                            <div class="personal__overview-it-title">
+                                <span class="title-txt">
+                                    playlist
+                                </span>
+                            </div>
+                            <div class="personal__overview-it-cot">
+                                <div class="slide-show">
+                                    <div class="slide-show-it">
+                                        <div class="slide-show-it-img"> <img src="./wwwroot/images/girl.jpg" alt=""
+                                                class="">
+                                            <div class="slide-show-it-option">
+                                                <div class="btn-box">
+                                                    <i class="fal fa-heart"></i>
+                                                </div>
+                                                <div class="btn-box btn-box-play"> <i class="fal fa-play-circle"></i>
+                                                </div>
+                                                <div class="btn-box"><i class="far fa-ellipsis-h"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="slide-show-it-des">
+                                            <div class="slide-show-it-des-name">
+                                                best girl
+                                            </div>
+                                            <div class="slide-show-it-des-author">
+                                                internet source
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                    <!-- en -->
+                                </div>
+
+                                <!-- overview-album -->
+                                <div class="personal__overview-it overview__album">
+                                    <div class="personal__overview-it-title">
+                                        <span class="title-txt">
+                                            album
+                                        </span>
+                                    </div>
+                                    <div class="personal__overview-it-cot ">
+                                        <div class="slide-show">
+                                            <div class="slide-show-it">
+                                                <div class="slide-show-it-img"> <img src="./wwwroot/images/girl.jpg"
+                                                        alt="" class="">
+                                                    <div class="slide-show-it-option">
+                                                        <div class="btn-box">
+                                                            <i class="fal fa-heart"></i>
+                                                        </div>
+                                                        <div class="btn-box btn-box-play"> <i
+                                                                class="fal fa-play-circle"></i>
+                                                        </div>
+                                                        <div class="btn-box"><i class="far fa-ellipsis-h"></i></div>
+                                                    </div>
+                                                </div>
+                                                <div class="slide-show-it-des">
+                                                    <div class="slide-show-it-des-name">
+                                                        best girl
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- overview-mv -->
+                                <div class="personal__overview-it overview__mv">
+                                    <div class="personal__overview-it-title">
+                                        <span class="title-txt">
+                                            mV
+                                        </span>
+                                    </div>
+                                    <div class="personal__overview-it-cot">
+                                        <div class="slide-show">
+                                            <div class="slide-show-it">
+                                                <div class="slide-show-it-img"> <img src="./wwwroot/images/girl.jpg"
+                                                        alt="" class="">
+                                                    <div class="slide-show-it-option">
+                                                        <div class="btn-box">
+                                                            <i class="fal fa-heart"></i>
+                                                        </div>
+                                                        <div class="btn-box btn-box-play"> <i
+                                                                class="fal fa-play-circle"></i>
+                                                        </div>
+                                                        <div class="btn-box"><i class="far fa-ellipsis-h"></i></div>
+                                                    </div>
+                                                </div>
+                                                <div class="slide-show-it-des">
+                                                    <img src="./wwwroot/images/girl.jpg" alt="">
+                                                    <div class="overview__mv-des">
+                                                        <div class="slide-show-it-des-name">
+                                                            best girl
+                                                        </div>
+                                                        <div class="slide-show-it-des-author">
+                                                            mr .siro
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- overview-artist -->
+                                <div class="personal__overview-it overview__artist">
+                                    <div class="personal__overview-it-title">
+                                        <span class="title-txt">
+                                            nghệ sĩ
+                                        </span>
+                                    </div>
+                                    <div class="personal__overview-it-cot ">
+                                        <div class="slide-show slide-show-album">
+                                            <div class="slide-show-it">
+                                                <div class="slide-show-it-img"> <img src="./wwwroot/images/girl.jpg"
+                                                        alt="" class="">
+                                                    <div class="slide-show-it-option">
+
+                                                        <div class="btn-box btn-box-play"> <i
+                                                                class="fal fa-play-circle"></i>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="slide-show-it-des">
+                                                    <div class="slide-show-it-des-name">
+                                                        best girl
+                                                    </div>
+                                                    <div class="des-folow">77k flow</div>
+                                                    <div class="">
+                                                        <i class="fal fa-check"></i>
+                                                        <span>đã theo dõi</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
 </body>
 
 </html>

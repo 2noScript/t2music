@@ -1,13 +1,14 @@
 .controlmusic {
   z-index: 99;
   position: fixed;
-  background-color: blue;
+  background-color: rgb(13, 25, 50);
   height: var(--controlMusic-h);
   width: calc(100vw - var(--navmenu-w) - 64px);
   top: calc(100vh - var(--controlMusic-h));
   right: 32px;
   padding-left: 16px;
   padding-right: 16px;
+  color: white;
 }
 .controlmusic__currentsong {
   display: flex;

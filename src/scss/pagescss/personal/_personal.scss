@@ -1,124 +1,77 @@
-.page-personal-box {
-  margin-top: var(--header-h);
-  // margin-top: 80px;
-  background-color: transparent;
-  width: 100%;
-}
-.personal__user-box {
+@import "./personalOverView";
+.personal__head {
   position: relative;
-  height: 240px;
+  height: 300px;
+  width: 100%;
+  color: white;
 }
-.personal__user-profile {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.personal__head-user {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 32px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   height: 100%;
 }
-.personal__user-profile-img {
-  margin-top: 24px;
-  height: 120px;
-  width: 120px;
+.personal__head-user-img {
+  height: 96px;
+  width: 96px;
   object-fit: cover;
   border-radius: 50%;
 }
-
-.personal__user-profile-name {
-  width: 100%;
+.personal__head-user-name {
   margin-top: 16px;
-  font-size: 24px;
-  text-align: center;
+  font-size: 32px;
+  text-transform: capitalize;
+}
+.personal__head-narbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 56px;
+  width: 100%;
+  // background-color: cadetblue;
+  bottom: 0;
+}
+.personal__head-narbar-menu {
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  background-color: chocolate;
+  height: 32px;
+  width: 600px;
+  justify-content: space-between;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
-.personal__narbar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 52px;
-}
-.personal__narbar-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  background-color: rgb(53, 53, 53);
-  height: 36px;
-  width: 560px;
-  border-radius: 30px;
-}
-.personal__narbar-box-item {
-  cursor: pointer;
-  height: 24px;
+.personal__head-narbar-menu .btn-text {
+  height: 26px;
   flex: 0 0 20%;
-  background-color: rgb(114, 114, 114);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 25px;
 }
-.personal__narbar-box-item-more {
+.personal__head-narbar-menu .btn-more {
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 0 0 9%;
 }
-
-// content
-.personal__content {
-  padding-top: 16px;
-  display: block;
-}
-.personal__content-item {
-}
-.personnal__content-title {
-  position: relative;
-  display: flex;
-  align-items: center;
-  background-color: burlywood;
-  height: 30px;
-}
-.personnal__content-title-text {
-  font-size: 20px;
-  padding-left: 8px;
-  text-transform: capitalize;
-  font-weight: 800;
+.personal__head-narbar-menu .btn-text:hover,
+.personal__head-narbar-menu .btn-more:hover {
+  border-radius: 25px;
+  background-color: cornflowerblue;
+  cursor: pointer;
 }
 
-.personal__songs {
-  display: flex;
-  padding-top: 16px;
-  height: 300px;
-}
-.personal__songs-animate {
-  width: 300px;
-  background-color: chartreuse;
-}
-.personal__songs-list {
-  padding-left: 16px;
-  flex: 1;
-  overflow-y: scroll;
-}
-.personal__songs-list-item {
-  display: flex;
-  align-items: center;
-  // flex-wrap: nowrap;
-  height: 25%;
-}
-.personal__songs-img {
-  width: 40px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-.personal__songs-description {
-  padding-left: 8px;
-}
-.personal__songs-description-name {
-  font-size: 14px;
-  text-transform: capitalize;
-  font-weight: 600;
-}
-.personal__songs-description-author {
-  font-size: 12px;
-  text-decoration: none;
-}
-.personal__songs-description-author:hover {
-  text-decoration: underline;
+.personal__body {
+  color: white;
+  margin-top: 24px;
+  width: 100%;
+  // background-color: cornflowerblue;
 }
