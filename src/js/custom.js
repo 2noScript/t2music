@@ -1,5 +1,25 @@
 const custom = {
   loadOverView: {
+    songs: function (query, data) {
+      $(query).append(`
+      <div class="the-song row no-gutters">
+      <img src="./wwwroot/images/girl.jpg" alt="" class="the-song-img">
+      <div class="the-song-des">
+          <div class="the-song-des-name">best girl</div>
+          <a href="#" class="the-song-des-author"> internet source</a>
+      </div>
+      <div class="the-song-time col l-o-4 l-1 m-0 c-0">00:00</div>
+      <div class="the-song-option">
+          <div>
+              <i class="fal fa-microphone"></i>
+          </div>
+          <div><i class="fal fa-heart"></i></div>
+          <div><i class="far fa-ellipsis-h"></i></div>
+      </div>
+  </div>
+
+      `);
+    },
     playList: function (query, data) {
       $(query).append(`
           <div class="slide-show-it">
@@ -113,6 +133,25 @@ const custom = {
           "<button type='button' class='slick-prev pull-left'><i class='fal fa-chevron-left'></i></i></button>",
         nextArrow:
           "<button type='button' class='slick-next pull-right'><i class='fal fa-chevron-right'></i></i></button>",
+
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 4,
+              infinite: true,
+              // dots: true,
+            },
+          },
+          {
+            breakpoint: 740,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+            },
+          },
+        ],
       });
     },
     album: function (query) {
@@ -125,6 +164,25 @@ const custom = {
           "<button type='button' class='slick-prev pull-left'><i class='fal fa-chevron-left'></i></i></button>",
         nextArrow:
           "<button type='button' class='slick-next pull-right'><i class='fal fa-chevron-right'></i></i></button>",
+
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              infinite: true,
+              // dots: true,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+            },
+          },
+        ],
       });
     },
     mv: function (query) {
@@ -137,6 +195,24 @@ const custom = {
           "<button type='button' class='slick-prev pull-left'><i class='fal fa-chevron-left'></i></i></button>",
         nextArrow:
           "<button type='button' class='slick-next pull-right'><i class='fal fa-chevron-right'></i></i></button>",
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              infinite: true,
+              // dots: true,
+            },
+          },
+          {
+            breakpoint: 740,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
       });
     },
     artist: function (query) {
@@ -149,6 +225,24 @@ const custom = {
           "<button type='button' class='slick-prev pull-left'><i class='fal fa-chevron-left'></i></i></button>",
         nextArrow:
           "<button type='button' class='slick-next pull-right'><i class='fal fa-chevron-right'></i></i></button>",
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              infinite: true,
+              // dots: true,
+            },
+          },
+          {
+            breakpoint: 740,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+            },
+          },
+        ],
       });
     },
   },

@@ -1,46 +1,38 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>My Now Amazing Webpage</title>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <title>Document</title>
+    <style>
+        #o {
+            width: 300px;
+        }
+    </style>
 </head>
-<style>
-    ul {
-        margin-top: 100px;
-        margin-left: 100px;
-        background-color: burlywood;
-        width: 200px;
-        height: 100px;
-        display: flex;
-    }
-</style>
 
 <body>
 
-    <ul>
-        <li>xin chào</li>
-        <li>các bạn</li>
-        <li>mình là </li>
-        <li>t2dev</li>
-
-    </ul>
+    <div class="click">click</div>
+    <div class="mute" style="background-color: cadetblue;margin-top: 20px;">mute</div>
     <script>
-        var d;
-        $.getJSON('./wwwroot/data/data.json', function (data) {
-            d = data;
+
+        var song = new Audio()
+        var p = new Promise(function (resolve, reject) {
+            song.src = "https://raw.githubusercontent.com/T02DEV/T2music-data/main/mySongs/audio/Niềm Vui Của Em-Chan La Cà-song1.mp3"
+            resolve()
+        })
+        p.then(function () {
+            song.play()
         })
 
-        console.log(d)
-        $("ul").slick({
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            draggable: false,
-            infinite: false,
 
-        })
+
+
+
     </script>
 </body>
 
