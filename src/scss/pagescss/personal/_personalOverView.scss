@@ -2,7 +2,7 @@
 }
 .personal__overview-it {
   //   min-height: 300px;
-  margin-top: 16px;
+  margin-top: 40px;
 }
 .personal__overview-it-title {
   position: relative;
@@ -13,7 +13,7 @@
 }
 .personal__overview-it-title .title-txt {
   text-transform: capitalize;
-  margin-left: 8px;
+  margin-left: 18px;
   font-size: 18px;
   font-weight: 600;
 }
@@ -23,6 +23,8 @@
 
 //overview-song
 .personal__overview-it-cot.overview-songs {
+  padding-left: 16px;
+  padding-right: 16px;
   display: flex;
 }
 .personal__overview-it-cot .overview-songs__animate {
@@ -42,6 +44,7 @@
   height: 60px;
   display: flex;
   align-items: center;
+  // padding-right: 0;
 }
 .overview-songs__list .the-song-img {
   height: 40px;
@@ -109,6 +112,8 @@
 
 .personal__overview-it-cot .slide-show {
   width: 100%;
+  // margin-left: -4px;
+  // margin-right: -16px;
 }
 .personal__overview-it-cot {
   padding-top: 16px;
@@ -117,12 +122,12 @@
   box-sizing: border-box;
   padding-left: 16px;
   padding-right: 16px;
-  width: 20%;
+  // width: 20%;
 }
 .slide-show .slide-show-it .slide-show-it-img {
   aspect-ratio: 1;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 4px;
   overflow: hidden;
   position: relative;
 }
@@ -190,6 +195,33 @@
   font-size: 32px;
 }
 
+//overview playlist
+.overview__playlist .slide-show-it {
+  // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  // background-color: blueviolet;
+  // box-shadow: 0 4px 8px 0 rgba(247, 227, 227, 0.781);
+  // background: linear-gradient(red, blue);
+}
+.overview__playlist .slide-show-it-des-author {
+  font-size: 14px;
+}
+.overview__playlist .slide-show-it-des {
+  height: 60px;
+  // background-color: blue;
+  display: flex;
+  flex-direction: column;
+  padding-left: 4px;
+  // align-items: center;
+  justify-content: center;
+  // box-shadow: 0 4px 8px 0 rgba(247, 227, 227, 0.781);
+}
+
+//overview album
+
+.overview__album .slide-show-it-des {
+  margin-left: 4px;
+  // height: 30px;
+}
 // overview mv
 .overview__mv .slide-show-it {
   // background-color: yellowgreen;
@@ -202,6 +234,7 @@
   width: 100%;
 }
 .overview__mv .slide-show-it-des {
+  margin-top: 4px;
   align-items: center;
   display: flex;
 }
@@ -217,7 +250,7 @@
 
 // overview artist
 .overview__artist .slide-show-it {
-  background-color: yellowgreen;
+  //   background-color: yellowgreen;
 }
 .overview__artist .slide-show-it-img {
   border-radius: 50% !important;
@@ -225,11 +258,31 @@
 .overview__artist .slide-show-it-img img {
 }
 .overview__artist .slide-show-it-des {
+  margin-top: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  // text-transform: capitalize;
 }
 .overview__artist {
   // height: 600px;
+}
+
+.overview__artist .slide-show-it-des-name {
+  font-weight: 400;
+}
+.overview__artist .slide-show-it-des .des-folow {
+  margin-top: 4px;
+  font-size: 12px;
+}
+.overview__artist .slide-show-it-des .des-tick {
+  margin-top: 4px;
+  background-color: brown;
+  padding-left: 4px;
+  padding-right: 4px;
+  border-radius: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 16px;
 }
