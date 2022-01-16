@@ -1,69 +1,110 @@
-import { custom } from "./custom";
+import { loadView } from "./loadView";
 import { data } from "./data";
 import { playList } from "./jsdata/playlist";
 import { mvList } from "./jsdata/mvList";
 import { albumList } from "./jsdata/albums";
 import { artistList } from "./jsdata/artistList";
+import { overviewSongs } from "./jsdata/overviewSongs";
+import { controlmusic } from "./controlmusic";
+function getDataSong(songs, subPthAudio, subPthImg) {
+  var _songs = {};
+  songs.forEach(function (item, index) {
+    var s = {};
+    s.id = "id" + index;
+    s.name = item.slice(0, item.search("-"));
+    s.author = item.slice(item.search("-") + 1, item.length);
+    s.audio = subPthAudio + item + ".mp3";
+    s.img = subPthImg + item + ".jpg";
+    _songs["s" + index] = s;
+  });
+  return _songs;
+}
 
-const personal = {
-  getDataSong: function (songs, subPthAudio, subPthImg) {
-    var _songs = {};
-    for (var k in songs) {
-      var s = songs[k];
-      var s1 = {};
-      s1.name = s.slice(0, s.search("-"));
-      s1.author = s.slice(s.search("-") + 1, s.length);
-      s1.img = subPthImg + s + ".jpg";
-      s1.audio = subPthAudio + s + ".mp3";
-      s1.id = k;
-      _songs[k] = s1;
-    }
-    return _songs;
-  },
-  loadOverviewSongs: function () {
-    var songs = this.getDataSong(
-      data.personal.songs,
+function renderViewSongs() {
+  var songs = getDataSong(
+    overviewSongs,
+    "./data/personal/songs/",
+    "./data/personal/songs/img/"
+  );
+  for (var k in songs) {
+    loadView.overView.songs(".overview__songs .overview-songs__list", songs[k]);
+  }
+}
+
+function renderOverViewBody() {
+  playList.forEach(function (item) {
+    loadView.overView.playList(".overview__playlist .slide-show", item);
+  });
+  mvList.forEach(function (item) {
+    loadView.overView.mv(".overview__mv .slide-show", item);
+  });
+  albumList.forEach(function (item) {
+    loadView.overView.album(".overview__album .slide-show", item);
+  });
+  artistList.forEach(function (item) {
+    loadView.overView.artist(".overview__artist .slide-show", item);
+  });
+}
+
+function useSlideshow() {
+  loadView.slickSlider.playList(".overview__playlist .slide-show");
+  loadView.slickSlider.album(".overview__album .slide-show");
+  loadView.slickSlider.mv(".overview__mv .slide-show");
+  loadView.slickSlider.artist(".overview__artist .slide-show");
+}
+
+function narbarHandle() {
+  var currentNarbartab;
+  $(".personal__head-narbar-menu .btn-text").click(function () {
+    $(".personal__head-narbar-menu .btn-text").removeClass("btn-text-active");
+    $(this).addClass("btn-text-active");
+  });
+}
+
+function OverviewSongSelected() {
+  $(document).ready(function () {
+    var currentId;
+    var audio = new Audio();
+    var songs = getDataSong(
+      overviewSongs,
       "./data/personal/songs/",
       "./data/personal/songs/img/"
     );
-    console.log(songs);
-    for (var k in songs) {
-      custom.loadOverView.songs(
-        ".overview__songs .overview-songs__list",
-        songs[k]
-      );
-    }
-  },
+    $(".overview__songs .overview-songs__list .the-song").click(function () {
+      $(
+        ".overview__songs .overview-songs__list .the-song.the-song--active"
+      ).removeClass("the-song--active");
+      $(this).addClass("the-song--active");
 
+      //xử lý khi nghe nhạc
+      var id = $(this)[0].id;
+      for (var k in songs) {
+        if (id == songs[k].id && songs[k].id != currentId) {
+          currentId = id;
+          audio.pause();
+          // console.log("ok");
+          audio.src = songs[k].audio;
+          audio.play();
+          controlmusic.musicPlay(audio);
+          if (audio.paused == false)
+            setTimeout(console.log(audio.currentTime), 1000);
+
+          // $(".controlmusic__current-timesong span").text(audio.duration);
+        }
+      }
+    });
+  });
+}
+
+const personal = {
   eventHandle: function () {
-    this.loadOverviewSongs();
-
-    playList.forEach(function (item) {
-      custom.loadOverView.playList(".overview__playlist .slide-show", item);
-    });
-    mvList.forEach(function (item) {
-      custom.loadOverView.mv(".overview__mv .slide-show", item);
-    });
-    albumList.forEach(function (item) {
-      custom.loadOverView.album(".overview__album .slide-show", item);
-    });
-    artistList.forEach(function (item) {
-      custom.loadOverView.artist(".overview__artist .slide-show", item);
-    });
-
-    custom.slickSlider.playList(".overview__playlist .slide-show");
-    custom.slickSlider.album(".overview__album .slide-show");
-    custom.slickSlider.mv(".overview__mv .slide-show");
-    custom.slickSlider.artist(".overview__artist .slide-show");
-
-    //narbar
-    var currentNarbartab;
-    $(".personal__head-narbar-menu .btn-text").click(function () {
-      $(".personal__head-narbar-menu .btn-text").removeClass("btn-text-active");
-      $(this).addClass("btn-text-active");
-    });
+    narbarHandle();
+    OverviewSongSelected();
   },
   start: function () {
+    renderViewSongs();
+    renderOverViewBody();
+    useSlideshow();
     this.eventHandle();
   },
 };

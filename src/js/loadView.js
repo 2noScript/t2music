@@ -1,13 +1,14 @@
 import { playList } from "./jsdata/playlist";
 
-const custom = {
-  convertTime: function (time) {
-    var p = Math.floor(time / 60);
-    var s = Math.floor(time % 60);
-    if (p > 9) return p + ":" + s;
-    else return "0" + p + ":" + s;
-  },
-  loadOverView: {
+function convertTime(time) {
+  var p = Math.floor(time / 60);
+  var s = Math.floor(time % 60);
+  if (p > 9) return p + ":" + s;
+  else return "0" + p + ":" + s;
+}
+
+const loadView = {
+  overView: {
     songs: function (query, song) {
       var audio = new Audio();
       audio.src = song.audio;
@@ -31,9 +32,7 @@ const custom = {
       </div>
           `);
       audio.onloadeddata = function () {
-        $(`#${song.id} .the-song-time`).text(
-          `${custom.convertTime(audio.duration)}`
-        );
+        $(`#${song.id} .the-song-time`).text(`${convertTime(audio.duration)}`);
       };
     },
     playList: function (query, playlistItem) {
@@ -263,4 +262,4 @@ const custom = {
     },
   },
 };
-export { custom };
+export { loadView };

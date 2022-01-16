@@ -6,11 +6,6 @@ const data = {
       s3: "yêu anh em nhé-huyr",
       s4: "sai cách yêu-lê bảo bình",
     },
-    playlist: {
-      p: {},
-    },
-    mv: {},
-    artist: {},
   },
 };
 export { data };

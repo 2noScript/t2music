@@ -1,9 +1,11 @@
+function clearInputSearch() {
+  $(".header__search-clear").click(function () {
+    $(".header__search-text")[0].value = null;
+  });
+}
 const header = {
   eventHandle: function () {
-    // bug
-    $(".header__search-clear").click(function () {
-      $(".header__search-text")[0].value = null;
-    });
+    clearInputSearch();
   },
   start: function () {
     this.eventHandle();

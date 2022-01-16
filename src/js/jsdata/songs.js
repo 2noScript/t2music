@@ -1,2 +1,0 @@
-const songs = [];
-export { songs };
