@@ -3,11 +3,12 @@
   position: fixed;
   top: 0;
   right: 32px;
-  // background-color: rgb(38, 31, 46);
+  background-color: rgb(38, 31, 46);
   height: var(--header-h);
   width: calc(100vw - var(--navmenu-w) - 64px);
   display: flex;
   align-items: center;
+  transform: none;
 }
 
 .header__navigate {

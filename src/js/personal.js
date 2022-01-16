@@ -8,7 +8,6 @@ import { artistList } from "./jsdata/artistList";
 const personal = {
   getDataSong: function (songs, subPthAudio, subPthImg) {
     var _songs = {};
-
     for (var k in songs) {
       var s = songs[k];
       var s1 = {};
@@ -28,22 +27,20 @@ const personal = {
       "./data/personal/songs/img/"
     );
     console.log(songs);
-
     for (var k in songs) {
       custom.loadOverView.songs(
         ".overview__songs .overview-songs__list",
         songs[k]
       );
-      // console.log(songs[k]);
     }
   },
+
   eventHandle: function () {
     this.loadOverviewSongs();
 
     playList.forEach(function (item) {
       custom.loadOverView.playList(".overview__playlist .slide-show", item);
     });
-
     mvList.forEach(function (item) {
       custom.loadOverView.mv(".overview__mv .slide-show", item);
     });
@@ -58,6 +55,7 @@ const personal = {
     custom.slickSlider.album(".overview__album .slide-show");
     custom.slickSlider.mv(".overview__mv .slide-show");
     custom.slickSlider.artist(".overview__artist .slide-show");
+
     //narbar
     var currentNarbartab;
     $(".personal__head-narbar-menu .btn-text").click(function () {

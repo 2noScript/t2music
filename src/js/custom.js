@@ -11,16 +11,16 @@ const custom = {
     songs: function (query, song) {
       var audio = new Audio();
       audio.src = song.audio;
-      audio.onloadeddata = function () {
-        console.log(audio.duration);
-        $(query).append(`
+      $(query).append(`
           <div class="the-song" id="${song.id}">
           <img src="${song.img}" alt="" class="the-song-img">
+          <img src="./wwwroot/images/songActiveAnimation/icon-playing.gif" alt=""
+          class="the-song-animate">
           <div class="the-song-des">
               <div class="the-song-des-name">${song.name}</div>
               <a href="#" class="the-song-des-author">${song.author}</a>
           </div>
-          <div class="the-song-time">${custom.convertTime(audio.duration)}</div>
+          <div class="the-song-time"></div>
           <div class="the-song-option">
               <div>
                   <i class="fal fa-microphone"></i>
@@ -30,6 +30,10 @@ const custom = {
           </div>
       </div>
           `);
+      audio.onloadeddata = function () {
+        $(`#${song.id} .the-song-time`).text(
+          `${custom.convertTime(audio.duration)}`
+        );
       };
     },
     playList: function (query, playlistItem) {

@@ -11,7 +11,19 @@ const controlmusic = {
       `${this.getBackgroundSize(inputRange)}%`
     );
   },
+  selectOverviewSonsIt: function () {
+    $(document).ready(function () {
+      $(".overview__songs .overview-songs__list .the-song").click(function () {
+        $(
+          ".overview__songs .overview-songs__list .the-song.the-song--active"
+        ).removeClass("the-song--active");
+        $(this).addClass("the-song--active");
+      });
+    });
+  },
   eventHandle: function () {
+    this.selectOverviewSonsIt();
+    //
     $(".controlmusic__custom-toggle").click(function () {
       $(".controlmusic__custom").toggleClass("controlmusic__custom--show");
     });
