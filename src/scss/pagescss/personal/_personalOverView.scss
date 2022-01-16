@@ -63,6 +63,11 @@
   text-decoration: none;
   font-size: 14px;
 }
+.overview-songs__list .the-song-time {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
 .overview-songs__list .the-song-option {
   position: absolute;
@@ -90,12 +95,17 @@
 
 .slick-next,
 .slick-prev {
+  z-index: 55;
   position: absolute;
   right: 16px;
-  top: -30px;
+  top: -46px;
   height: 30px;
   width: 30px;
-  background-color: transparent;
+  background-color: blue;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .slick-prev {
   right: 56px;
@@ -116,6 +126,7 @@
   // margin-right: -16px;
 }
 .personal__overview-it-cot {
+  // background-color: blueviolet;
   padding-top: 16px;
 }
 .slide-show .slide-show-it {

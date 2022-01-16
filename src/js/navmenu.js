@@ -12,7 +12,6 @@ const navmenu = {
       });
       currentTab = this;
       $(this).addClass("navmenu__tab--active");
-      console.log(this.offsetTop);
     });
     window.addEventListener("resize", function () {
       $(".navmenu__tab-select").css({

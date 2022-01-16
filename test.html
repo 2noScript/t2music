@@ -5,33 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Document</title>
     <style>
-        #o {
+        .k {
             width: 300px;
+            /* display: none; */
         }
     </style>
 </head>
 
 <body>
 
-    <div class="click">click</div>
-    <div class="mute" style="background-color: cadetblue;margin-top: 20px;">mute</div>
+
     <script>
 
-        var song = new Audio()
-        var p = new Promise(function (resolve, reject) {
-            song.src = "https://raw.githubusercontent.com/T02DEV/T2music-data/main/mySongs/audio/Niềm Vui Của Em-Chan La Cà-song1.mp3"
-            resolve()
-        })
-        p.then(function () {
-            song.play()
-        })
-
-
-
-
+        var s = "hello-what"
+        var name = s.slice(0, s.search('-'))
+        var author = s.slice(s.search('-') + 1, s.length)
+        console.log(name)
+        console.log(author)
 
     </script>
 </body>

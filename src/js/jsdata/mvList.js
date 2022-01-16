@@ -1,0 +1,103 @@
+const mvList = [
+  {
+    name: "Một Bước Yêu Vạn Dặm Đau",
+    author: "Mr. Siro",
+    time: "11:54",
+    authorAvatar: "./data/personal/mv/mvArtist/artist1.jpg",
+    img: "./data/personal/mv/mv1.jpg",
+  },
+  {
+    name: "Simple Love",
+    author: "Obito, Seachains, Davis",
+    time: "03:54",
+    authorAvatar: "./data/personal/mv/mvArtist/artist2.jpg",
+    img: "./data/personal/mv/mv2.jpg",
+  },
+  {
+    name: "Lời Yêu Ngây Dại",
+    author: "Kha",
+    time: "04:33",
+    authorAvatar: "./data/personal/mv/mvArtist/artist3.jpg",
+    img: "./data/personal/mv/mv3.jpg",
+  },
+  {
+    name: "24H",
+    author: "LyLy, Magazine",
+    time: "04:18",
+    authorAvatar: "./data/personal/mv/mvArtist/artist4.jpg",
+    img: "./data/personal/mv/mv4.jpg",
+  },
+  {
+    name: "Nước Mắt Em Lau Bằng Tình Yêu Mới",
+    author: "Da LAB, Tóc Tiên",
+    time: "05:45",
+    authorAvatar: "./data/personal/mv/mvArtist/artist5.jpg",
+    img: "./data/personal/mv/mv5.jpg",
+  },
+
+  {
+    name: "Yêu Đơn Phương",
+    author: "OnlyC, Karik",
+    time: "05:02",
+    authorAvatar: "./data/personal/mv/mvArtist/artist6.jpg",
+    img: "./data/personal/mv/mv6.jpg",
+  },
+  {
+    name: "Phía Sau Em",
+    author: "Kay Trần, Binz",
+    time: "04:06",
+    authorAvatar: "./data/personal/mv/mvArtist/artist7.jpg",
+    img: "./data/personal/mv/mv7.jpg",
+  },
+  {
+    name: "Mình Yêu nhau đi",
+    author: "Bích Phương",
+    time: "03:52",
+    authorAvatar: "./data/personal/mv/mvArtist/artist8.jpg",
+    img: "./data/personal/mv/mv8.jpg",
+  },
+  {
+    name: "Đừng Về Trễ (Acoustic Version)",
+    author: "Sơn Tùng MTP",
+    time: "04:41",
+    authorAvatar: "./data/personal/mv/mvArtist/artist9.jpg",
+    img: "./data/personal/mv/mv9.jpg",
+  },
+  {
+    name: "Hơn Cả Yêu",
+    author: "Đức Phúc",
+    time: "05:43",
+    authorAvatar: "./data/personal/mv/mvArtist/artist10.jpg",
+    img: "./data/personal/mv/mv10.jpg",
+  },
+  {
+    name: "Vì Yêu Cứ Đâm Đầu",
+    author: "MIN, Đen, JustaTee",
+    time: "04:01",
+    authorAvatar: "./data/personal/mv/mvArtist/artist11.jpg",
+    img: "./data/personal/mv/mv11.jpg",
+  },
+  {
+    name: "Sao Anh Chưa Về Nhà",
+    author: "AMEE, Ricky Star",
+    time: "04:36",
+    authorAvatar: "./data/personal/mv/mvArtist/artist12.jpg",
+    img: "./data/personal/mv/mv12.jpg",
+  },
+  {
+    name: "Bigcityboi",
+    author: "Binz, Touliver",
+    time: "03:43",
+    authorAvatar: "./data/personal/mv/mvArtist/artist13.jpg",
+    img: "./data/personal/mv/mv13.jpg",
+  },
+  {
+    name: "Em Không Sai Chúng Ta Sai",
+    author: "ERIK",
+    time: "06:28",
+    authorAvatar: "./data/personal/mv/mvArtist/artist14.jpg",
+    img: "./data/personal/mv/mv14.jpg",
+  },
+];
+
+export { mvList };

@@ -1,29 +1,41 @@
-const custom = {
-  loadOverView: {
-    songs: function (query, data) {
-      $(query).append(`
-      <div class="the-song row no-gutters">
-      <img src="./wwwroot/images/girl.jpg" alt="" class="the-song-img">
-      <div class="the-song-des">
-          <div class="the-song-des-name">best girl</div>
-          <a href="#" class="the-song-des-author"> internet source</a>
-      </div>
-      <div class="the-song-time col l-o-4 l-1 m-0 c-0">00:00</div>
-      <div class="the-song-option">
-          <div>
-              <i class="fal fa-microphone"></i>
-          </div>
-          <div><i class="fal fa-heart"></i></div>
-          <div><i class="far fa-ellipsis-h"></i></div>
-      </div>
-  </div>
+import { playList } from "./jsdata/playlist";
 
-      `);
+const custom = {
+  convertTime: function (time) {
+    var p = Math.floor(time / 60);
+    var s = Math.floor(time % 60);
+    if (p > 9) return p + ":" + s;
+    else return "0" + p + ":" + s;
+  },
+  loadOverView: {
+    songs: function (query, song) {
+      var audio = new Audio();
+      audio.src = song.audio;
+      audio.onloadeddata = function () {
+        console.log(audio.duration);
+        $(query).append(`
+          <div class="the-song" id="${song.id}">
+          <img src="${song.img}" alt="" class="the-song-img">
+          <div class="the-song-des">
+              <div class="the-song-des-name">${song.name}</div>
+              <a href="#" class="the-song-des-author">${song.author}</a>
+          </div>
+          <div class="the-song-time">${custom.convertTime(audio.duration)}</div>
+          <div class="the-song-option">
+              <div>
+                  <i class="fal fa-microphone"></i>
+              </div>
+              <div><i class="fal fa-heart"></i></div>
+              <div><i class="far fa-ellipsis-h"></i></div>
+          </div>
+      </div>
+          `);
+      };
     },
-    playList: function (query, data) {
+    playList: function (query, playlistItem) {
       $(query).append(`
           <div class="slide-show-it">
-          <div class="slide-show-it-img"> <img src="./wwwroot/images/girl.jpg" alt=""
+          <div class="slide-show-it-img"> <img src="${playlistItem.img}" alt=""
                   class="">
               <div class="slide-show-it-option">
                   <div class="btn-box">
@@ -36,19 +48,19 @@ const custom = {
           </div>
           <div class="slide-show-it-des">
               <div class="slide-show-it-des-name">
-                  best girl
+                 ${playlistItem.name}
               </div>
               <div class="slide-show-it-des-author">
-                  internet source
+                  ${playlistItem.creator}
               </div>
           </div>
       </div> 
           `);
     },
-    album: function (query, data) {
+    album: function (query, albumList) {
       $(query).append(`
       <div class="slide-show-it">
-      <div class="slide-show-it-img"> <img src="./wwwroot/images/girl.jpg" alt=""
+      <div class="slide-show-it-img"> <img src="${albumList.img}" alt=""
               class="">
           <div class="slide-show-it-option">
               <div class="btn-box">
@@ -61,44 +73,44 @@ const custom = {
       </div>
       <div class="slide-show-it-des">
           <div class="slide-show-it-des-name">
-              best girl
+              ${albumList.name}
           </div>
       </div>
   </div>
       `);
     },
-    mv: function (query) {
+    mv: function (query, mvs) {
       $(query).append(`
-        <div class="slide-show-it">
-        <div class="slide-show-it-img"> <img src="./wwwroot/images/girl.jpg" alt=""
-                class="">
-            <div class="slide-show-it-option">
-                <div class="btn-box">
-                    <i class="fal fa-heart"></i>
-                </div>
-                <div class="btn-box btn-box-play"> <i class="fal fa-play-circle"></i>
-                </div>
-                <div class="btn-box"><i class="far fa-ellipsis-h"></i></div>
-            </div>
-        </div>
-        <div class="slide-show-it-des">
-            <img src="./wwwroot/images/girl.jpg" alt="">
-            <div class="overview__mv-des">
-                <div class="slide-show-it-des-name">
-                    best girl
-                </div>
-                <div class="slide-show-it-des-author">
-                    mr .siro
-                </div>
-            </div>
-        </div>
-    </div>
+      <div class="slide-show-it">
+      <div class="slide-show-it-img"> <img src="${mvs.img}" alt=""
+              class="">
+          <div class="slide-show-it-option">
+              <div class="btn-box">
+                  <i class="fal fa-heart"></i>
+              </div>
+              <div class="btn-box btn-box-play"> <i class="fal fa-play-circle"></i>
+              </div>
+              <div class="btn-box"><i class="far fa-ellipsis-h"></i></div>
+          </div>
+      </div>
+      <div class="slide-show-it-des">
+          <img src="${mvs.authorAvatar}" alt="">
+          <div class="overview__mv-des">
+              <div class="slide-show-it-des-name">
+                  ${mvs.name}
+              </div>
+              <div class="slide-show-it-des-author">
+                 ${mvs.author}
+              </div>
+          </div>
+      </div>
+  </div>
         `);
     },
-    artist: function (query) {
+    artist: function (query, artistList) {
       $(query).append(`
         <div class="slide-show-it">
-        <div class="slide-show-it-img"> <img src="./wwwroot/images/girl.jpg" alt=""
+        <div class="slide-show-it-img"> <img src="${artistList.img}" alt=""
                 class="">
             <div class="slide-show-it-option">
 
@@ -109,9 +121,9 @@ const custom = {
         </div>
         <div class="slide-show-it-des">
             <div class="slide-show-it-des-name">
-                best girl
+                ${artistList.name}
             </div>
-            <div class="des-folow">77k flow</div>
+            <div class="des-folow">${artistList.followers} flow</div>
             <div class="des-tick">
                 <i class="fal fa-check"></i>
                 <span>Đã theo dõi</span>
