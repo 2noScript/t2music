@@ -64,6 +64,7 @@ function narbarHandle() {
 function OverviewSongSelected() {
   $(document).ready(function () {
     var currentId;
+    var mute = false;
     var audio = new Audio();
     var songs = getDataSong(
       overviewSongs,
@@ -86,10 +87,6 @@ function OverviewSongSelected() {
           audio.src = songs[k].audio;
           audio.play();
           controlmusic.musicPlay(audio);
-          if (audio.paused == false)
-            setTimeout(console.log(audio.currentTime), 1000);
-
-          // $(".controlmusic__current-timesong span").text(audio.duration);
         }
       }
     });

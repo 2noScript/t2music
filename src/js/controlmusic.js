@@ -37,14 +37,6 @@ function progressHandle() {
       );
     }
   );
-  // $(".controlmusic__custom-volume input[type='range']").bind(
-  //   "change",
-  //   function () {
-  //     setBackgroundSize(
-  //       $(".controlmusic__custom-volume input[type='range']")[0]
-  //     );
-  //   }
-  // );
 }
 
 function toggleControlOption() {
@@ -53,30 +45,58 @@ function toggleControlOption() {
   });
 }
 
+function toggleMute() {
+  $(".controlmusic__custom-item.toggle-mute").click(function () {
+    $(this).toggleClass("controlmusic__custom-item--mute");
+  });
+}
+
+function isAudioMute() {
+  if (
+    $(".controlmusic__custom-item.controlmusic__custom-item--mute").length == 0
+  )
+    return false;
+  else return true;
+}
+
 const controlmusic = {
   musicPlay: function (audio) {
     var duration;
     audio.onloadeddata = function () {
       duration = audio.duration;
       audio.ontimeupdate = function () {
+        audio.muted = isAudioMute();
+        // audio state time
         $(".controlmusic__current-timesong span").text(
           `${convertTime(audio.currentTime)}/${convertTime(duration)}`
         );
         $(`.controlmusic__progress input`)[0].value = Math.floor(
-          (audio.currentTime / duration) * 100
+          (audio.currentTime / duration) * 1000
         );
-
         setBackgroundSize($(`.controlmusic__progress input`)[0]);
+
+        // audio muted
+        $(".controlmusic__custom-item.toggle-mute").click(function () {
+          audio.muted = isAudioMute();
+        });
       };
+      // controler
+      $(".controlmusic__progress input").bind("input", function () {
+        audio.currentTime = ($(this)[0].value * duration) / 1000;
+      });
+
+      //option
+      $(".controlmusic__custom-volume input").bind("input", function () {
+        audio.volume = $(this)[0].value / 100;
+      });
     };
   },
 
   eventHandle: function () {
     toggleControlOption();
     progressHandle();
-    $(`.controlmusic__progress input`).bind("click", function () {
-      console.log($(this));
-    });
+    toggleMute();
+    console.log($(".controlmusic__custom-item--mute").length);
   },
   start: function () {
     this.eventHandle();

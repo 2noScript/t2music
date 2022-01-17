@@ -134,7 +134,6 @@ input[type="range"] {
   position: absolute;
   top: 10%;
   right: 16px;
-
   height: 80%;
   display: flex;
   align-items: center;
@@ -151,6 +150,16 @@ input[type="range"] {
   margin-right: 4px;
   font-size: 16px;
 }
+.controlmusic__custom-item .is-mute {
+  display: none;
+}
+.controlmusic__custom-item.controlmusic__custom-item--mute .is-mute {
+  display: block;
+}
+.controlmusic__custom-item.controlmusic__custom-item--mute .no-mute {
+  display: none;
+}
+
 .controlmusic__custom-toggle {
   display: none;
 }
