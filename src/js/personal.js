@@ -1,10 +1,15 @@
 import { loadView } from "./loadView";
-import { data } from "./data";
 import { playList } from "./jsdata/playlist";
 import { mvList } from "./jsdata/mvList";
 import { albumList } from "./jsdata/albums";
 import { artistList } from "./jsdata/artistList";
 import { overviewSongs } from "./jsdata/overviewSongs";
+
+const listSong = getDataSong(
+  overviewSongs,
+  "./data/personal/songs/",
+  "./data/personal/songs/img/"
+);
 import { controlmusic } from "./controlmusic";
 function getDataSong(songs, subPthAudio, subPthImg) {
   var _songs = {};
@@ -76,16 +81,13 @@ function OverviewSongSelected() {
         ".overview__songs .overview-songs__list .the-song.the-song--active"
       ).removeClass("the-song--active");
       $(this).addClass("the-song--active");
-
       //xử lý khi nghe nhạc
       var id = $(this)[0].id;
       for (var k in songs) {
         if (id == songs[k].id && songs[k].id != currentId) {
           currentId = id;
           audio.pause();
-          // console.log("ok");
           audio.src = songs[k].audio;
-          audio.play();
           controlmusic.musicPlay(audio);
         }
       }

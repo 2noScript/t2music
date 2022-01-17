@@ -122,14 +122,17 @@ input[type="range"] {
   background-color: red;
 }
 
-.controlmusic__btnbox-item-play {
+.controlmusic__btnbox-item.btn-play,
+.controlmusic__btnbox-item.btn-pause {
   background-color: transparent;
   display: none;
   font-size: 40px;
 }
-.controlmusic__btnbox-item-play--active {
+
+.controlmusic__btnbox-item.btn-play {
   display: flex;
 }
+
 .controlmusic__custom {
   position: absolute;
   top: 10%;
@@ -159,7 +162,9 @@ input[type="range"] {
 .controlmusic__custom-item.controlmusic__custom-item--mute .no-mute {
   display: none;
 }
-
+.controlmusic__btnbox-item.is-repeat.is-repeat--true {
+  color: blue;
+}
 .controlmusic__custom-toggle {
   display: none;
 }

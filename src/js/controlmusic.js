@@ -58,23 +58,38 @@ function isAudioMute() {
     return false;
   else return true;
 }
-
+function isRepeatSong() {
+  if ($(".controlmusic__btnbox-item.is-repeat.is-repeat--true").length == 0)
+    return false;
+  else return true;
+}
+function controller() {}
 const controlmusic = {
   musicPlay: function (audio) {
     var duration;
+
+    //
+    audio.play();
+    $(".controlmusic__btnbox-item.btn-pause").css("display", "flex");
+    $(".controlmusic__btnbox-item.btn-play").css("display", "none");
+
     audio.onloadeddata = function () {
       duration = audio.duration;
       audio.ontimeupdate = function () {
+        // bắt đầu set trạng thái âm thanh
         audio.muted = isAudioMute();
+        audio.loop = isRepeatSong();
         // audio state time
+        //
+
         $(".controlmusic__current-timesong span").text(
           `${convertTime(audio.currentTime)}/${convertTime(duration)}`
         );
+
         $(`.controlmusic__progress input`)[0].value = Math.floor(
           (audio.currentTime / duration) * 1000
         );
         setBackgroundSize($(`.controlmusic__progress input`)[0]);
-
         // audio muted
         $(".controlmusic__custom-item.toggle-mute").click(function () {
           audio.muted = isAudioMute();
@@ -83,6 +98,22 @@ const controlmusic = {
       // controler
       $(".controlmusic__progress input").bind("input", function () {
         audio.currentTime = ($(this)[0].value * duration) / 1000;
+      });
+      //played
+      $(".controlmusic__btnbox-item.btn-play").click(function () {
+        $(this).css("display", "none");
+        $(".controlmusic__btnbox-item.btn-pause").css("display", "flex");
+        audio.play();
+      });
+      //paused
+      $(".controlmusic__btnbox-item.btn-pause").click(function () {
+        $(this).css("display", "none");
+        $(".controlmusic__btnbox-item.btn-play").css("display", "flex");
+        audio.pause();
+      });
+      //repeat
+      $(".controlmusic__btnbox-item.is-repeat").click(function () {
+        audio.loop = isRepeatSong();
       });
 
       //option
@@ -93,10 +124,14 @@ const controlmusic = {
   },
 
   eventHandle: function () {
+    // play();
     toggleControlOption();
     progressHandle();
     toggleMute();
-    console.log($(".controlmusic__custom-item--mute").length);
+
+    $(".controlmusic__btnbox-item.is-repeat").click(function () {
+      $(this).toggleClass("is-repeat--true");
+    });
   },
   start: function () {
     this.eventHandle();
