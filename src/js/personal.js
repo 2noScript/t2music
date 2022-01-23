@@ -88,7 +88,7 @@ function OverviewSongSelected() {
           currentId = id;
           audio.pause();
           audio.src = songs[k].audio;
-          controlmusic.musicPlay(audio);
+          controlmusic.musicPlay(audio, songs[k].img, id);
         }
       }
     });

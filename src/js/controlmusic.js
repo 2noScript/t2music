@@ -65,9 +65,8 @@ function isRepeatSong() {
 }
 function controller() {}
 const controlmusic = {
-  musicPlay: function (audio) {
+  musicPlay: function (audio, img, id) {
     var duration;
-
     //
     audio.play();
     $(".controlmusic__btnbox-item.btn-pause").css("display", "flex");
@@ -121,6 +120,11 @@ const controlmusic = {
         audio.volume = $(this)[0].value / 100;
       });
     };
+    $(".controlmusic__currentsong-img").attr("src", img);
+    var name = $(`#${id} .the-song-des-name`).text();
+    var artist = $(`#${id} .the-song-des-author`).text();
+    $(`.controlmusic__currentsong-songname`).text(`${name}`);
+    $(`.controlmusic__currentsong-author`).text(`${artist}`);
   },
 
   eventHandle: function () {

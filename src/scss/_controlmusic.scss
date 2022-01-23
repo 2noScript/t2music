@@ -16,6 +16,7 @@
   height: 100%;
 }
 .controlmusic__currentsong-img {
+  object-fit: cover;
   border-radius: 4px;
   height: 64px;
   width: 64px;
@@ -192,5 +193,4 @@ input[type="range"] {
   right: 260px;
   margin-right: 8px;
   font-weight: 900;
-  // font-family: "Lato", sans-serif;
 }
